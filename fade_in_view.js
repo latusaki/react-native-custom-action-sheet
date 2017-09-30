@@ -1,11 +1,12 @@
 'use strict';
 
+var createReactClass = require('create-react-class');
 var React = require('react');
 var ReactNative = require('react-native');
 var { Animated, Dimensions, StyleSheet, View } = ReactNative;
 var window = Dimensions.get('window');
 
-var FadeInView = React.createClass({
+var FadeInView = createReactClass({
   getInitialState: function() {
     return {
       fadeAnim: new Animated.Value(0)
@@ -26,7 +27,7 @@ var FadeInView = React.createClass({
       duration: 300
     }).start();
   },
-  
+
   render: function() {
     return (
       <Animated.View style={[styles.overlay,
